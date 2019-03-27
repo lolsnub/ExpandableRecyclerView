@@ -45,11 +45,21 @@ public class MoreActivity extends AppCompatActivity {
                 R.drawable.lisa_image_06, R.drawable.lisa_image_07, R.drawable.lisa_image_08, R.drawable.lisa_image_09, R.drawable.lisa_image_10,
                 R.drawable.lisa_image_11, R.drawable.lisa_image_12};
 
+        int[] kasumiImage = {R.drawable.kasumi_4_image_01, R.drawable.kasumi_4_image_02, R.drawable.kasumi_4_image_03, R.drawable.kasumi_4_image_04, R.drawable.kasumi_4_image_05};
+        int[] ayaImage = {R.drawable.aya_4_image_06, R.drawable.aya_4_image_07, R.drawable.aya_4_image_08, R.drawable.aya_4_image_09, R.drawable.aya_4_image_10};
+        int[] ranImage = {R.drawable.ran_4_image_01,R.drawable.ran_4_image_02,R.drawable.ran_4_image_03,R.drawable.ran_4_image_04,R.drawable.ran_4_image_05};
+        int[] kokoroImage = {R.drawable.kokoro_4_image_01,R.drawable.kokoro_4_image_02,R.drawable.kokoro_4_image_03,R.drawable.kokoro_4_image_04,R.drawable.kokoro_4_image_05};
+
         init("Yukina", yukinaImage);
         init("Rinko", rinkoImage);
         init("Ako", akoImage);
         init("Lisa", lisaImage);
         init("Sayo", sayoImage);
+        init("Kasumi", kasumiImage);
+        init("Aya", ayaImage);
+        init("Ran", ranImage);
+        init("Kokoro", kokoroImage);
+
 
         rvBookList.setHasFixedSize(true);
         rvBookList.setLayoutManager(new GridLayoutManager(this, 3));

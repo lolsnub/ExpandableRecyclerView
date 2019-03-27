@@ -12,8 +12,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import database.c347.soi.rp.edu.sg.expandablerecyclerview.Adapter.MyAdapter;
-import database.c347.soi.rp.edu.sg.expandablerecyclerview.Model.Band;
-import database.c347.soi.rp.edu.sg.expandablerecyclerview.Model.BandMember;
 import database.c347.soi.rp.edu.sg.expandablerecyclerview.Model.HorizontalModel;
 import database.c347.soi.rp.edu.sg.expandablerecyclerview.Model.TitleChild;
 import database.c347.soi.rp.edu.sg.expandablerecyclerview.Model.TitleCreator;
@@ -67,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
         int[] lisaImage = {R.drawable.lisa_image_01, R.drawable.lisa_image_02, R.drawable.lisa_image_03, R.drawable.lisa_image_04, R.drawable.lisa_image_05,
                 R.drawable.lisa_image_06, R.drawable.lisa_image_07, R.drawable.lisa_image_08, R.drawable.lisa_image_09, R.drawable.lisa_image_10,
                 R.drawable.lisa_image_11, R.drawable.lisa_image_12};
+        int[] kasumiImage = {R.drawable.kasumi_4_image_01, R.drawable.kasumi_4_image_02, R.drawable.kasumi_4_image_03, R.drawable.kasumi_4_image_04, R.drawable.kasumi_4_image_05};
+        int[] ayaImage = {R.drawable.aya_4_image_06, R.drawable.aya_4_image_07, R.drawable.aya_4_image_08, R.drawable.aya_4_image_09, R.drawable.aya_4_image_10};
+        int[] ranImage = {R.drawable.ran_4_image_01,R.drawable.ran_4_image_02,R.drawable.ran_4_image_03,R.drawable.ran_4_image_04,R.drawable.ran_4_image_05};
+        int[] kokoroImage = {R.drawable.kokoro_4_image_01,R.drawable.kokoro_4_image_02,R.drawable.kokoro_4_image_03,R.drawable.kokoro_4_image_04,R.drawable.kokoro_4_image_05};
+
+
 
         for(TitleParent titleParent : title){
             ArrayList<HorizontalModel> arrayListHorizontal1 = new ArrayList<>();
@@ -159,27 +163,107 @@ public class MainActivity extends AppCompatActivity {
                 titleParent.setChildObjectList(childList);
                 parentObjects.add(titleParent);
             } else if(titleParent.getBangName().equals("Poppin' Party")){
+                for(int i=0; i<poppinTitleList.length; i++){
+                    String name = poppinTitleList[i];
+                    if(name.equals("Kasumi")){
+                        TitleChild titleChild = new TitleChild();
+                        titleChild.setTitle(name);
+                        ArrayList<HorizontalModel> arrayListHorizontal = new ArrayList<>();
+                        int k = 1;
+
+                        for(int j=0; j<5; j++){
+                            HorizontalModel horizontalModel = new HorizontalModel();
+                            horizontalModel.setName(name + " : 0" +k);
+                            horizontalModel.setDescription("Description: " +j);
+                            horizontalModel.setImg(kasumiImage[j]);
+                            arrayListHorizontal.add(horizontalModel);
+                            k++;
+                        }
+                        titleChild.setArrayList(arrayListHorizontal);
+                        childList.add(titleChild);
+                    }
+                }
 //                List<Object> childList = new ArrayList<>();
-                HorizontalModel horizontalModel = new HorizontalModel();
-                childList.add(new TitleChild(poppinTitleList[0], arrayListHorizontal1));
+//                HorizontalModel horizontalModel = new HorizontalModel();
+//                childList.add(new TitleChild(poppinTitleList[0], arrayListHorizontal1));
                 titleParent.setChildObjectList(childList);
                 parentObjects.add(titleParent);
             } else if(titleParent.getBangName().equals("Pastel Palettes")){
 //                List<Object> childList = new ArrayList<>();
-                HorizontalModel horizontalModel = new HorizontalModel();
-                childList.add(new TitleChild(pastelTitleList[0], arrayListHorizontal1));
+                for(int i=0; i<pastelTitleList.length; i++){
+                    String name = pastelTitleList[i];
+                    if(name.equals("Aya")){
+                        TitleChild titleChild = new TitleChild();
+                        titleChild.setTitle(name);
+                        ArrayList<HorizontalModel> arrayListHorizontal = new ArrayList<>();
+                        int k = 1;
+
+                        for(int j=0; j<5; j++){
+                            HorizontalModel horizontalModel = new HorizontalModel();
+                            horizontalModel.setName(name + " : 0" +k);
+                            horizontalModel.setDescription("Description: " +j);
+                            horizontalModel.setImg(ayaImage[j]);
+                            arrayListHorizontal.add(horizontalModel);
+                            k++;
+                        }
+                        titleChild.setArrayList(arrayListHorizontal);
+                        childList.add(titleChild);
+                    }
+                }
+//                HorizontalModel horizontalModel = new HorizontalModel();
+//                childList.add(new TitleChild(pastelTitleList[0], arrayListHorizontal1));
                 titleParent.setChildObjectList(childList);
                 parentObjects.add(titleParent);
             } else if(titleParent.getBangName().equals("Afterglow")){
 //                List<Object> childList = new ArrayList<>();
-                HorizontalModel horizontalModel = new HorizontalModel();
-                childList.add(new TitleChild(afterglowTitleList[0], arrayListHorizontal1));
+                for(int i=0; i<afterglowTitleList.length; i++){
+                    String name = afterglowTitleList[i];
+                    if(name.equals("Ran")){
+                        TitleChild titleChild = new TitleChild();
+                        titleChild.setTitle(name);
+                        ArrayList<HorizontalModel> arrayListHorizontal = new ArrayList<>();
+                        int k = 1;
+
+                        for(int j=0; j<5; j++){
+                            HorizontalModel horizontalModel = new HorizontalModel();
+                            horizontalModel.setName(name + " : 0" +k);
+                            horizontalModel.setDescription("Description: " +j);
+                            horizontalModel.setImg(ranImage[j]);
+                            arrayListHorizontal.add(horizontalModel);
+                            k++;
+                        }
+                        titleChild.setArrayList(arrayListHorizontal);
+                        childList.add(titleChild);
+                    }
+                }
+//                HorizontalModel horizontalModel = new HorizontalModel();
+//                childList.add(new TitleChild(afterglowTitleList[0], arrayListHorizontal1));
                 titleParent.setChildObjectList(childList);
                 parentObjects.add(titleParent);
             } else if(titleParent.getBangName().equals("Hello, Happy World!")){
 //                List<Object> childList = new ArrayList<>();
-                HorizontalModel horizontalModel = new HorizontalModel();
-                childList.add(new TitleChild(helloTitleList[0], arrayListHorizontal1));
+                for(int i=0; i<helloTitleList.length; i++){
+                    String name = helloTitleList[i];
+                    if(name.equals("Kokoro")){
+                        TitleChild titleChild = new TitleChild();
+                        titleChild.setTitle(name);
+                        ArrayList<HorizontalModel> arrayListHorizontal = new ArrayList<>();
+                        int k = 1;
+
+                        for(int j=0; j<5; j++){
+                            HorizontalModel horizontalModel = new HorizontalModel();
+                            horizontalModel.setName(name + " : 0" +k);
+                            horizontalModel.setDescription("Description: " +j);
+                            horizontalModel.setImg(kokoroImage[j]);
+                            arrayListHorizontal.add(horizontalModel);
+                            k++;
+                        }
+                        titleChild.setArrayList(arrayListHorizontal);
+                        childList.add(titleChild);
+                    }
+                }
+//                HorizontalModel horizontalModel = new HorizontalModel();
+//                childList.add(new TitleChild(helloTitleList[0], arrayListHorizontal1));
                 titleParent.setChildObjectList(childList);
                 parentObjects.add(titleParent);
             }
@@ -188,21 +272,5 @@ public class MainActivity extends AppCompatActivity {
         return parentObjects;
     }
 
-    private void initData(){
-        HashMap<ArrayList<Band>, ArrayList<BandMember>> map = new HashMap<>();
-        ArrayList<Band> bandArrayList = new ArrayList<>();
-        ArrayList<BandMember> roseliaMemberList = new ArrayList<>();
-        ArrayList<BandMember> poppinMemberList = new ArrayList<>();
-        ArrayList<BandMember> pastelMemberList = new ArrayList<>();
-        ArrayList<BandMember> afterglowMemberList = new ArrayList<>();
-        ArrayList<BandMember> happyMemberList = new ArrayList<>();
 
-        bandArrayList.add(new Band("Roselia", "#5B67FF", "https://firebasestorage.googleapis.com/v0/b/portfolio-f214c.appspot.com/o/Band_logo%2Froselia_logo.png?alt=media&token=6474a7de-fe6d-4d38-923f-e871f1104b53"));
-        bandArrayList.add(new Band("Poppin' Party", "#FF3B72", "https://firebasestorage.googleapis.com/v0/b/portfolio-f214c.appspot.com/o/Band_logo%2FPoppin'Party.png?alt=media&token=744d3c66-2b93-4f70-bb68-8e73268e8866"));
-        bandArrayList.add(new Band("Pastel Palettes", "#5B67FF", "https://firebasestorage.googleapis.com/v0/b/portfolio-f214c.appspot.com/o/Band_logo%2FPastel_Palettes.png?alt=media&token=35655b1b-eaf2-449a-bc9d-9a6410768f65"));
-        bandArrayList.add(new Band("Afterglow", "#E53343", "https://firebasestorage.googleapis.com/v0/b/portfolio-f214c.appspot.com/o/Band_logo%2FAfterglow.png?alt=media&token=a71798a8-9706-43d5-b939-5aa9839064de"));
-        bandArrayList.add(new Band("Hello, Happy World!", "#FFC02A", "https://firebasestorage.googleapis.com/v0/b/portfolio-f214c.appspot.com/o/Band_logo%2FHello%2C%20Happy%20World!.png?alt=media&token=02c51201-7191-4167-a308-8b7dba053b5e"));
-
-
-    }
 }

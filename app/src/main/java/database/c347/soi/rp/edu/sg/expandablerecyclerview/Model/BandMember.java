@@ -1,36 +1,57 @@
 package database.c347.soi.rp.edu.sg.expandablerecyclerview.Model;
 
+import java.util.ArrayList;
+
 public class BandMember {
+    String bandMemberName;
 
-    String BandName, Rare, ImageURL;
-
-    public BandMember(String bandName, String rare, String imageURL) {
-        BandName = bandName;
-        Rare = rare;
-        ImageURL = imageURL;
+    public BandMember(String bandMemberName) {
+        this.bandMemberName = bandMemberName;
     }
 
-    public String getBandName() {
-        return BandName;
+    public BandMember(){
+
     }
 
-    public void setBandName(String bandName) {
-        BandName = bandName;
+    public String getBandMemberName() {
+        return bandMemberName;
     }
 
-    public String getRare() {
-        return Rare;
+    public void getRoseliaMember(ArrayList<BandMember> roseliaMember){
+        String[] roseliaTitleList = {"Yukina", "Sayo", "Lisa", "Ako", "Rinko"};
+        for(String s : roseliaTitleList){
+            roseliaMember.add(new BandMember(s));
+        }
+
     }
 
-    public void setRare(String rare) {
-        Rare = rare;
+    public void getPoppinMember(ArrayList<BandMember> poppinMember){
+        String[] poppinTitleList = {"Kasumi", "Tae", "Rimi", "Saaya", "Arisa"};
+        for(String s : poppinTitleList){
+            poppinMember.add(new BandMember(s));
+        }
+
     }
 
-    public String getImageURL() {
-        return ImageURL;
+    public void getPastelMember(ArrayList<BandMember> pastelMember){
+        String[] pastelTitleList = {"Aya", "Hina", "Chisato", "Maya", "Eve"};
+        for(String s : pastelTitleList){
+            pastelMember.add(new BandMember(s));
+        }
+
     }
 
-    public void setImageURL(String imageURL) {
-        ImageURL = imageURL;
+    public void getAfterglowMember(ArrayList<BandMember> afterglowMember){
+        String[] afterglowTitleList = {"Ran", "Moca", "Himari", "Tomoe", "Tsugumi"};
+        for(String s : afterglowTitleList){
+            afterglowMember.add(new BandMember(s));
+        }
+    }
+
+    public void getHappyMember(ArrayList<BandMember> happyMember){
+        String[] helloTitleList = {"Kokoro", "Kaoru", "Hagumi", "Kanon", "Misaki"};
+        for(String s : helloTitleList){
+            happyMember.add(new BandMember(s));
+        }
     }
 }
