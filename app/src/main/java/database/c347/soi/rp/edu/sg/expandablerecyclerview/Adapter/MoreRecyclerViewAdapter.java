@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 import database.c347.soi.rp.edu.sg.expandablerecyclerview.Model.Book;
@@ -41,44 +43,45 @@ public class MoreRecyclerViewAdapter extends RecyclerView.Adapter<MoreRecyclerVi
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
         holder.tvTitle.setText(mData.get(position).getTitle());
-        holder.ivImage.setImageResource(mData.get(position).getImage());
+//        holder.ivImage.setImageResource(mData.get(position).getImage());
+        Glide.with(mContext).load(mData.get(position).getImageURL()).into(holder.ivImage);
 
         myDialog = new Dialog(mContext);
 
         holder.ivImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                displayDialogImage(mData.get(position).getImage());
+                displayDialogImage(mData.get(position).getImageURL());
             }
         });
 
-        holder.ivIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Create SnackBar
-                Snackbar snackbar = Snackbar.make(view, holder.tvTitle.getText().toString()+" Clicked", Snackbar.LENGTH_INDEFINITE)
-                        // Set action button
-                        .setAction("UNDO", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                //Create SnackBar1
-                                Snackbar snackbar1 = Snackbar.make(view, "Undo Successful", Snackbar.LENGTH_SHORT);
-                                // Display SnackBar1
-                                snackbar1.show();
-                            }
-                        })
-                        // Set action button text color
-                        .setActionTextColor(Color.RED);
-
-                // set SnackBar color
-                View snackView = snackbar.getView();
-                TextView textView = snackView.findViewById(android.support.design.R.id.snackbar_text);
-                textView.setTextColor(Color.YELLOW);
-
-                // Display SnackBar
-                snackbar.show();
-            }
-        });
+//        holder.ivIcon.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                //Create SnackBar
+//                Snackbar snackbar = Snackbar.make(view, holder.tvTitle.getText().toString()+" Clicked", Snackbar.LENGTH_INDEFINITE)
+//                        // Set action button
+//                        .setAction("UNDO", new View.OnClickListener() {
+//                            @Override
+//                            public void onClick(View view) {
+//                                //Create SnackBar1
+//                                Snackbar snackbar1 = Snackbar.make(view, "Undo Successful", Snackbar.LENGTH_SHORT);
+//                                // Display SnackBar1
+//                                snackbar1.show();
+//                            }
+//                        })
+//                        // Set action button text color
+//                        .setActionTextColor(Color.RED);
+//
+//                // set SnackBar color
+//                View snackView = snackbar.getView();
+//                TextView textView = snackView.findViewById(android.support.design.R.id.snackbar_text);
+//                textView.setTextColor(Color.YELLOW);
+//
+//                // Display SnackBar
+//                snackbar.show();
+//            }
+//        });
     }
 
     @Override
@@ -88,22 +91,23 @@ public class MoreRecyclerViewAdapter extends RecyclerView.Adapter<MoreRecyclerVi
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView tvTitle;
-        ImageView ivImage, ivIcon;
+        ImageView ivImage;
         public MyViewHolder(View itemView){
             super(itemView);
             tvTitle = (TextView) itemView.findViewById(R.id.tvTitle);
             ivImage = (ImageView) itemView.findViewById(R.id.ivImage);
-            ivIcon = (ImageView) itemView.findViewById(R.id.ivIcon);
+//            ivIcon = (ImageView) itemView.findViewById(R.id.ivIcon);
         }
     }
 
-    private void displayDialogImage(int id){
+    private void displayDialogImage(String id){
         ImageView ivDisplay;
         TextView tvDisplayClose;
         myDialog.setContentView(R.layout.customdisplay);
         tvDisplayClose = (TextView) myDialog.findViewById(R.id.tvDisplayClose);
         ivDisplay = (ImageView) myDialog.findViewById(R.id.ivDisplay);
-        ivDisplay.setImageResource(id);
+//        ivDisplay.setImageResource(id);
+        Glide.with(mContext).load(id).into(ivDisplay);
         tvDisplayClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

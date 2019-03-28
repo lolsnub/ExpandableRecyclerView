@@ -29,9 +29,9 @@
             android:padding="5dp"
             android:text="Simple Text"
             android:textColor="@color/colorPrimary"
-            android:textSize="18dp"
-            android:maxLines="3"
-            android:lines="3"/>
+            android:textSize="13dp"
+            android:maxLines="4"
+            android:lines="4"/>
 
     </LinearLayout>
 

@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 import database.c347.soi.rp.edu.sg.expandablerecyclerview.Model.HorizontalModel;
@@ -35,7 +37,12 @@ public class HorizontalRecyclerViewAdapter extends RecyclerView.Adapter<Horizont
     public void onBindViewHolder(@NonNull HorizontalRVViewHolder holder, int position) {
         final HorizontalModel horizontalModel = arrayList.get(position);
         holder.tvTitle.setText(horizontalModel.getName());
-        holder.ivThumb.setImageResource(horizontalModel.getImg());
+        if(horizontalModel.getImgURL() == null){
+            holder.ivThumb.setImageResource(horizontalModel.getImg());
+        } else {
+            Glide.with(context).load(horizontalModel.getImgURL()).into(holder.ivThumb);
+        }
+
 //        holder.ivThumb.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {

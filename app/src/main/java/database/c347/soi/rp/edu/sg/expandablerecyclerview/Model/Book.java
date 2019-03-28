@@ -4,16 +4,17 @@ public class Book {
     private String Title;
     private String Category;
     private String Description;
+    private String ImageURL;
     private int Image;
 
     public Book() {
     }
 
-    public Book(String title, String category, String description, int image) {
+    public Book(String title, String category, String description, String imageURL) {
         Title = title;
         Category = category;
         Description = description;
-        Image = image;
+        ImageURL = imageURL;
     }
 
     public String getTitle() {
@@ -46,5 +47,13 @@ public class Book {
 
     public void setImage(int image) {
         Image = image;
+    }
+
+    public String getImageURL() {
+        return ImageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        ImageURL = imageURL;
     }
 }

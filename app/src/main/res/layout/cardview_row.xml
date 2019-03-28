@@ -39,24 +39,27 @@
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:layout_alignParentBottom="true"
             android:background="#8000"
+            android:textAlignment="center"
             android:gravity="center_vertical"
-            android:text="Title"
+            android:text="New Year's is Full of Fun"
             android:textColor="#fff"
-            android:paddingLeft="10dp"/>
+            android:paddingLeft="10dp"
+            android:maxLines="4"
+            android:lines="4"/>
 
-        <ImageView
-            android:id="@+id/ivIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:gravity=""
-            android:paddingRight="3dp"
-            android:paddingBottom="2dp"
-            android:src="@drawable/ic_info_black_24dp" />
+        <!--<ImageView-->
+            <!--android:id="@+id/ivIcon"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:gravity=""-->
+            <!--android:paddingRight="3dp"-->
+            <!--android:paddingBottom="2dp"-->
+            <!--android:src="@drawable/ic_info_black_24dp" />-->
 
 
     </RelativeLayout>

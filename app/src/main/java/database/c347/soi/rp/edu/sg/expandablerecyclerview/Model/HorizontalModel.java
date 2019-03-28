@@ -1,7 +1,7 @@
 package database.c347.soi.rp.edu.sg.expandablerecyclerview.Model;
 
 public class HorizontalModel {
-    String name, description;
+    String name, description, imgURL;
     int img;
 
     public String getName() {
@@ -26,5 +26,13 @@ public class HorizontalModel {
 
     public void setImg(int img) {
         this.img = img;
+    }
+
+    public String getImgURL() {
+        return imgURL;
+    }
+
+    public void setImgURL(String imgURL) {
+        this.imgURL = imgURL;
     }
 }
